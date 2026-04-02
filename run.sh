@@ -166,7 +166,7 @@ update_record(){
     log "Records updated:"
     while IFS= read -r line || [ -n "$line" ]; do
       [ -z "$line" ] && continue
-      printf '%s\n' "[container-dns]   ${line}"
+      printf '%s\n' "  - ${line}"
     done < "$hostsfile"
   fi
 
