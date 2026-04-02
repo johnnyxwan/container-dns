@@ -1,8 +1,8 @@
-FROM alpine:3.23 AS docker-static
+FROM alpine:3.21 AS docker-static
 RUN apk --no-cache add curl tar \
     && curl -sSL https://download.docker.com/linux/static/stable/x86_64/docker-28.3.1.tgz | tar zx -C /tmp
 
-FROM alpine:3.23
+FROM alpine:3.21
 RUN apk --no-cache add bash dnsmasq incus-client=6.0.4-r2 ed
 RUN mkdir -p /etc/dnsmasq-hosts.d
 COPY --from=docker-static /tmp/docker/docker /usr/local/bin/docker
