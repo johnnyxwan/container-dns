@@ -1,0 +1,21 @@
+# Local env and secrets
+.env
+.env.*
+!.env.example
+
+# Actual docker-compose.yml (keep docker-compose.sample.yml in repo)
+docker-compose.yml
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.swp
+*~
+
+# Logs
+*.log

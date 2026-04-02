@@ -1,0 +1,13 @@
+services:
+  dns:
+    image: ghcr.io/johnnyxwan/container-dns:latest
+    environment:
+      DNS_DOMAIN: local.
+      SUBNET: 172.17.0.0/16
+      DOCKER_NETWORK: bridge
+      INCUS_UPDATE_INTERVAL: 300
+    network_mode: host
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /var/lib/incus/unix.socket:/var/lib/incus/unix.socket:ro
+    restart: unless-stopped
